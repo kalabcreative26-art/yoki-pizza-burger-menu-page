@@ -186,7 +186,7 @@ function FoodCard({ item, index }: { item: Item; index: number }) {
           <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
         </div>
         <span className="shrink-0 rounded-full bg-gradient-flame px-3 py-1 text-sm font-bold text-primary-foreground shadow-glow">
-          {item.price}
+          {item.price} Br
         </span>
       </div>
     </motion.article>
