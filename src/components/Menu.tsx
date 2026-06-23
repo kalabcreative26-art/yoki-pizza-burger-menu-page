@@ -179,8 +179,8 @@ function FoodCard({ item, index }: { item: Item; index: number }) {
           src={item.image}
           alt={item.name}
           loading="lazy"
-          width={768}
-          height={768}
+          width={1024}
+          height={1024}
           className="h-44 w-44 object-contain drop-shadow-[0_18px_30px_rgba(0,0,0,0.45)]"
           animate={
             isPizza
