@@ -1,9 +1,33 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import pizza from "@/assets/pizza.png";
-import burger from "@/assets/burger.png";
-import fries from "@/assets/fries.png";
-import drink from "@/assets/drink.png";
+import omelet from "@/assets/menu/omelet.png";
+import fetira from "@/assets/menu/fetira.png";
+import scrambledEggs from "@/assets/menu/scrambled-eggs.png";
+import eggSandwich from "@/assets/menu/egg-sandwich.png";
+import chickenWrap from "@/assets/menu/chicken-wrap.png";
+import beefWrap from "@/assets/menu/beef-wrap.png";
+import veggieWrap from "@/assets/menu/veggie-wrap.png";
+import tunaWrap from "@/assets/menu/tuna-wrap.png";
+import specialBurger from "@/assets/menu/special-burger.png";
+import doubleBurger from "@/assets/menu/double-burger.png";
+import chickenBurger from "@/assets/menu/chicken-burger.png";
+import beefBurger from "@/assets/menu/beef-burger.png";
+import cheeseBurger from "@/assets/menu/cheese-burger.png";
+import specialPizza from "@/assets/menu/special-pizza.png";
+import chickenPizza from "@/assets/menu/chicken-pizza.png";
+import beefPizza from "@/assets/menu/beef-pizza.png";
+import margheritaPizza from "@/assets/menu/margherita-pizza.png";
+import halfHalfPizza from "@/assets/menu/half-half-pizza.png";
+import aiTunaPizza from "@/assets/menu/ai-tuna-pizza.png";
+import tunaFastingPizza from "@/assets/menu/tuna-fasting-pizza.png";
+import vegetablePizza from "@/assets/menu/vegetable-pizza.png";
+import orangeJuice from "@/assets/menu/orange-juice.png";
+import papayaJuice from "@/assets/menu/papaya-juice.png";
+import pineappleJuice from "@/assets/menu/pineapple-juice.png";
+import mangoJuice from "@/assets/menu/mango-juice.png";
+import softDrink from "@/assets/menu/soft-drink.png";
+import softDrinkP from "@/assets/menu/soft-drink-p.png";
+import water from "@/assets/menu/water.png";
 
 type Category = "All" | "Breakfast" | "Wraps" | "Burgers" | "Pizzas" | "Drinks";
 
@@ -18,42 +42,42 @@ type Item = {
 
 const ITEMS: Item[] = [
   // Breakfast
-  { id: "bf1", name: "Omelet", category: "Breakfast", price: "350", description: "Fluffy farm-fresh eggs, herbs.", image: fries },
-  { id: "bf2", name: "Fetira", category: "Breakfast", price: "350", description: "Flaky layered breakfast pastry.", image: fries },
-  { id: "bf3", name: "Scrambled Eggs", category: "Breakfast", price: "300", description: "Soft, buttery scramble.", image: fries },
-  { id: "bf4", name: "Egg Sandwich", category: "Breakfast", price: "300", description: "Toasted bun, egg, fresh veg.", image: burger },
+  { id: "bf1", name: "Omelet", category: "Breakfast", price: "350", description: "Fluffy farm-fresh eggs, herbs.", image: omelet },
+  { id: "bf2", name: "Fetira", category: "Breakfast", price: "350", description: "Flaky layered breakfast pastry.", image: fetira },
+  { id: "bf3", name: "Scrambled Eggs", category: "Breakfast", price: "300", description: "Soft, buttery scramble.", image: scrambledEggs },
+  { id: "bf4", name: "Egg Sandwich", category: "Breakfast", price: "300", description: "Toasted bun, egg, fresh veg.", image: eggSandwich },
 
   // Wraps
-  { id: "w1", name: "Chicken Wrap", category: "Wraps", price: "500", description: "Grilled chicken, garlic sauce, crunch.", image: burger },
-  { id: "w2", name: "Beef Wrap", category: "Wraps", price: "500", description: "Seasoned beef, peppers, herbs.", image: burger },
-  { id: "w3", name: "Veggie Wrap", category: "Wraps", price: "400", description: "Crisp veggies, hummus, greens.", image: burger },
-  { id: "w4", name: "Tuna Wrap", category: "Wraps", price: "500", description: "Tuna, sweetcorn, creamy dressing.", image: burger },
+  { id: "w1", name: "Chicken Wrap", category: "Wraps", price: "500", description: "Grilled chicken, garlic sauce, crunch.", image: chickenWrap },
+  { id: "w2", name: "Beef Wrap", category: "Wraps", price: "500", description: "Seasoned beef, peppers, herbs.", image: beefWrap },
+  { id: "w3", name: "Veggie Wrap", category: "Wraps", price: "400", description: "Crisp veggies, hummus, greens.", image: veggieWrap },
+  { id: "w4", name: "Tuna Wrap", category: "Wraps", price: "500", description: "Tuna, sweetcorn, creamy dressing.", image: tunaWrap },
 
   // Burgers
-  { id: "b1", name: "Special Burger", category: "Burgers", price: "750", description: "Yoki's signature stacked smash.", image: burger },
-  { id: "b2", name: "Double Burger", category: "Burgers", price: "900", description: "Two juicy patties, double cheese.", image: burger },
-  { id: "b3", name: "Chicken Burger", category: "Burgers", price: "650", description: "Crispy chicken, slaw, house sauce.", image: burger },
-  { id: "b4", name: "Beef Burger", category: "Burgers", price: "600", description: "Classic beef patty, fresh veg.", image: burger },
-  { id: "b5", name: "Cheese Burger", category: "Burgers", price: "650", description: "Melted cheddar over smashed beef.", image: burger },
+  { id: "b1", name: "Special Burger", category: "Burgers", price: "750", description: "Yoki's signature stacked smash.", image: specialBurger },
+  { id: "b2", name: "Double Burger", category: "Burgers", price: "900", description: "Two juicy patties, double cheese.", image: doubleBurger },
+  { id: "b3", name: "Chicken Burger", category: "Burgers", price: "650", description: "Crispy chicken, slaw, house sauce.", image: chickenBurger },
+  { id: "b4", name: "Beef Burger", category: "Burgers", price: "600", description: "Classic beef patty, fresh veg.", image: beefBurger },
+  { id: "b5", name: "Cheese Burger", category: "Burgers", price: "650", description: "Melted cheddar over smashed beef.", image: cheeseBurger },
 
   // Pizzas
-  { id: "p1", name: "Special Pizza", category: "Pizzas", price: "800", description: "Loaded with the chef's favorites.", image: pizza },
-  { id: "p2", name: "Chicken Pizza", category: "Pizzas", price: "700", description: "Grilled chicken, mozzarella, herbs.", image: pizza },
-  { id: "p3", name: "Beef Pizza", category: "Pizzas", price: "700", description: "Spiced beef, onions, peppers.", image: pizza },
-  { id: "p4", name: "Margarita Pizza", category: "Pizzas", price: "600", description: "Tomato, mozzarella, fresh basil.", image: pizza },
-  { id: "p5", name: "Half & Half Pizza", category: "Pizzas", price: "700", description: "Two flavors on one pie.", image: pizza },
-  { id: "p6", name: "Ai Tuna Pizza", category: "Pizzas", price: "750", description: "Tuna, onions, mozzarella.", image: pizza },
-  { id: "p7", name: "Tuna Fasting", category: "Pizzas", price: "600", description: "Fasting-friendly tuna pizza.", image: pizza },
-  { id: "p8", name: "Vegetable Pizza", category: "Pizzas", price: "600", description: "Garden veggies, melted cheese.", image: pizza },
+  { id: "p1", name: "Special Pizza", category: "Pizzas", price: "800", description: "Loaded with the chef's favorites.", image: specialPizza },
+  { id: "p2", name: "Chicken Pizza", category: "Pizzas", price: "700", description: "Grilled chicken, mozzarella, herbs.", image: chickenPizza },
+  { id: "p3", name: "Beef Pizza", category: "Pizzas", price: "700", description: "Spiced beef, onions, peppers.", image: beefPizza },
+  { id: "p4", name: "Margarita Pizza", category: "Pizzas", price: "600", description: "Tomato, mozzarella, fresh basil.", image: margheritaPizza },
+  { id: "p5", name: "Half & Half Pizza", category: "Pizzas", price: "700", description: "Two flavors on one pie.", image: halfHalfPizza },
+  { id: "p6", name: "Ai Tuna Pizza", category: "Pizzas", price: "750", description: "Tuna, onions, mozzarella.", image: aiTunaPizza },
+  { id: "p7", name: "Tuna Fasting", category: "Pizzas", price: "600", description: "Fasting-friendly tuna pizza.", image: tunaFastingPizza },
+  { id: "p8", name: "Vegetable Pizza", category: "Pizzas", price: "600", description: "Garden veggies, melted cheese.", image: vegetablePizza },
 
   // Drinks
-  { id: "d1", name: "Orange Juice", category: "Drinks", price: "300", description: "Fresh-squeezed orange.", image: drink },
-  { id: "d2", name: "Papaya Juice", category: "Drinks", price: "250", description: "Smooth tropical papaya.", image: drink },
-  { id: "d3", name: "Pineapple Juice", category: "Drinks", price: "250", description: "Sweet & tangy pineapple.", image: drink },
-  { id: "d4", name: "Mango Juice", category: "Drinks", price: "250", description: "Rich ripe mango blend.", image: drink },
-  { id: "d5", name: "Soft Drink", category: "Drinks", price: "80", description: "Ice-cold classic fizz.", image: drink },
-  { id: "d6", name: "Soft Drink (P)", category: "Drinks", price: "100", description: "Premium size soft drink.", image: drink },
-  { id: "d7", name: "Water", category: "Drinks", price: "60", description: "Chilled bottled water.", image: drink },
+  { id: "d1", name: "Orange Juice", category: "Drinks", price: "300", description: "Fresh-squeezed orange.", image: orangeJuice },
+  { id: "d2", name: "Papaya Juice", category: "Drinks", price: "250", description: "Smooth tropical papaya.", image: papayaJuice },
+  { id: "d3", name: "Pineapple Juice", category: "Drinks", price: "250", description: "Sweet & tangy pineapple.", image: pineappleJuice },
+  { id: "d4", name: "Mango Juice", category: "Drinks", price: "250", description: "Rich ripe mango blend.", image: mangoJuice },
+  { id: "d5", name: "Soft Drink", category: "Drinks", price: "80", description: "Ice-cold classic fizz.", image: softDrink },
+  { id: "d6", name: "Soft Drink (P)", category: "Drinks", price: "100", description: "Premium size soft drink.", image: softDrinkP },
+  { id: "d7", name: "Water", category: "Drinks", price: "60", description: "Chilled bottled water.", image: water },
 ];
 
 const CATEGORIES: Category[] = ["All", "Breakfast", "Wraps", "Burgers", "Pizzas", "Drinks"];
